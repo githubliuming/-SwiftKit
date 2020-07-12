@@ -16,7 +16,15 @@ class LYBaseNavigationController: UINavigationController {
         // Do any additional setup after loading the view.
     }
     
-
+    override func pushViewController(_ viewController: UIViewController, animated: Bool) {
+        if self.viewControllers.count > 0 {
+            viewController.hidesBottomBarWhenPushed = true
+            
+        } else {
+            viewController.hidesBottomBarWhenPushed = false;
+        }
+        super .pushViewController(viewController, animated: animated)
+    }
     /*
     // MARK: - Navigation
 
